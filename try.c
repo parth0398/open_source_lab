@@ -8,7 +8,7 @@ void calculator() {
     int choice;
     double num1, num2, result;
 
-    do {
+    while (1) {
         printf("\nBasic Calculator Menu:\n");
         printf("1. Addition\n");
         printf("2. Subtraction\n");
@@ -55,7 +55,7 @@ void calculator() {
                 }
                 break;
         }
-    } while (choice != 5);
+    }
 }
 
 int main() {
@@ -63,12 +63,10 @@ int main() {
     char entered_password[50];
 
     printf("Enter ID: ");
-    fgets(entered_id, sizeof(entered_id), stdin);
-    entered_id[strcspn(entered_id, "\n")] = 0; // Remove trailing newline
+    scanf("%s", entered_id);
 
     printf("Enter Password: ");
-    fgets(entered_password, sizeof(entered_password), stdin);
-    entered_password[strcspn(entered_password, "\n")] = 0; // Remove trailing newline
+    scanf("%s", entered_password);
 
     if (strcmp(entered_id, USER_ID) == 0 && strcmp(entered_password, PASSWORD) == 0) {
         printf("Login successful!\n");
